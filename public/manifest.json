@@ -1,6 +1,6 @@
 {
-    "name": "My Onsen UI PWA",
-    "short_name": "Onsen PWA",
+    "name": "MAD Energy Clicker",
+    "short_name": "Energy Clicker",
     "start_url": "/",
     "display": "standalone",
     "theme_color": "#9D9D9D",
