@@ -6,11 +6,11 @@
     "theme_color": "white",
     "background_color": "white",
     "icons": [{
-      "src": "r.png",
+      "src": "public/R.png",
       "sizes": "192x192",
       "type": "image/png"
     },{
-      "src": "r.png",
+      "src": "public/R.png",
       "sizes": "512x512",
       "type": "image/png"
     }]
