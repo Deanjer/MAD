@@ -3,14 +3,14 @@
     "short_name": "Energy Clicker",
     "start_url": "/",
     "display": "standalone",
-    "theme_color": "#9D9D9D",
-    "background_color": "#9D9D9D",
+    "theme_color": "white",
+    "background_color": "white",
     "icons": [{
-      "src": "https://via.placeholder.com/192x192",
+      "src": "r.png",
       "sizes": "192x192",
       "type": "image/png"
     },{
-      "src": "https://via.placeholder.com/512x512",
+      "src": "r.png",
       "sizes": "512x512",
       "type": "image/png"
     }]
