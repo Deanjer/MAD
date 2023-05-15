@@ -105,3 +105,19 @@
   #myBtn:hover, #myBtn2:hover{
     cursor: pointer;
   }
+  .electricity-label {
+    background-color: #ffdd57;
+    color: #333;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: inline-block;
+  }
+  
+  .label-text {
+    text-transform: uppercase;
+  }
+  
+  
