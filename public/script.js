@@ -74,11 +74,17 @@ modal3.style.display = "none";
 }
 }
 //script.js
-let x = 0
-document.getElementById("counter").innerHTML = x
-document.getElementById('btn').addEventListener("click", iterate)
-function iterate(){
-    x += 1
-    console.log(x)
-    document.getElementById("counter").innerHTML = x
+let pointsElement = document.getElementById("points");
+let points = 0;
+pointsElement.innerHTML = points;
+
+if (localStorage.getItem("points") != null) {
+  points = localStorage.getItem("points");
+  pointsElement.innerHTML = points;
+}
+
+function addPoints() {
+  points = parseInt(points) + 10;
+  localStorage.setItem("points", points);
+  pointsElement.innerHTML = points;
 }
