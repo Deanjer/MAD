@@ -119,5 +119,12 @@
   .label-text {
     text-transform: uppercase;
   }
-  
-  
+.upgrade_title{
+font-size: 20px;
+font-weight: bold;
+}  
+  #upgrade{
+    width: 80%;
+    height: 20px;
+    text-align: center;
+  }

@@ -74,17 +74,50 @@ modal3.style.display = "none";
 }
 }
 //script.js
+//clicker
 let pointsElement = document.getElementById("points");
+let upgradeButton = document.getElementById("upgrade");
 let points = 0;
-pointsElement.innerHTML = points;
+let clickUpgradeAmount = 10;
+let isUpgraded = false;
 
 if (localStorage.getItem("points") != null) {
-  points = localStorage.getItem("points");
+  points = parseInt(localStorage.getItem("points"));
   pointsElement.innerHTML = points;
 }
 
+if (localStorage.getItem("clickUpgradeAmount") != null) {
+  clickUpgradeAmount = parseInt(localStorage.getItem("clickUpgradeAmount"));
+}
+
+if (localStorage.getItem("isUpgraded") != null) {
+  isUpgraded = localStorage.getItem("isUpgraded") === "true";
+}
+
+pointsElement.innerHTML = points;
+
 function addPoints() {
-  points = parseInt(points) + 10;
+  points += clickUpgradeAmount;
   localStorage.setItem("points", points);
   pointsElement.innerHTML = points;
 }
+
+function upgradeClickAmount() {
+  if (!isUpgraded && points >= 100) {
+    points -= 100;
+    clickUpgradeAmount += 10;
+    localStorage.setItem("points", points);
+    localStorage.setItem("clickUpgradeAmount", clickUpgradeAmount);
+    pointsElement.innerHTML = points;
+    upgradeButton.disabled = true;
+
+    isUpgraded = true;
+    localStorage.setItem("isUpgraded", isUpgraded);
+  }
+}
+
+if (isUpgraded) {
+  upgradeButton.disabled = true;
+}
+
+upgradeButton.addEventListener("click", upgradeClickAmount);
