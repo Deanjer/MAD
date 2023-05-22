@@ -125,6 +125,10 @@ font-weight: bold;
 }  
   #upgrade{
     width: 80%;
-    height: 20px;
+    height: 30px;
     text-align: center;
+    border: 2px solid #ffdd57;
+    border-radius: 10px;
+    font-size: 18px;
+    color: black;
   }

@@ -113,11 +113,23 @@ function upgradeClickAmount() {
 
     isUpgraded = true;
     localStorage.setItem("isUpgraded", isUpgraded);
+
+    upgradeButton.textContent = "Upgraded";
+    document.getElementById("upgradeCost").textContent = ""; // Clear the upgrade cost if already upgraded
   }
 }
 
+
 if (isUpgraded) {
   upgradeButton.disabled = true;
+  upgradeButton.textContent = "Upgraded";
+  document.getElementById("upgradeCost").textContent = ""; // Clear the upgrade cost if already upgraded
+} else {
+  upgradeButton.disabled = false;
+  upgradeButton.textContent = "Upgrade";
+  document.getElementById("upgradeCost").textContent = "Upgrade Cost: 100 points"; // Set the upgrade cost
 }
+
+// localStorage.clear();
 
 upgradeButton.addEventListener("click", upgradeClickAmount);
