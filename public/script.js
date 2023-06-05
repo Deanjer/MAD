@@ -115,7 +115,7 @@ function upgradeClickAmount() {
     localStorage.setItem("isUpgraded", isUpgraded);
 
     upgradeButton.textContent = "Upgraded";
-    document.getElementById("upgradeCost").textContent = ""; // Clear the upgrade cost if already upgraded
+    document.getElementById("upgradeCost").textContent = ""; // Als de upgrade gekocht is zie je de prijs niet meer
   }
 }
 
@@ -123,13 +123,14 @@ function upgradeClickAmount() {
 if (isUpgraded) {
   upgradeButton.disabled = true;
   upgradeButton.textContent = "Upgraded";
-  document.getElementById("upgradeCost").textContent = ""; // Clear the upgrade cost if already upgraded
+  document.getElementById("upgradeCost").textContent = ""; // Als de upgrade gekocht is zie je de prijs niet meer
 } else {
   upgradeButton.disabled = false;
   upgradeButton.textContent = "Upgrade";
-  document.getElementById("upgradeCost").textContent = "Upgrade Cost: 100 points"; // Set the upgrade cost
+  document.getElementById("upgradeCost").textContent = "Upgrade Cost: 100 points"; 
 }
 
-// localStorage.clear();
+// Verwijderd de opgelsagen data > goed om te kunnen testen
+localStorage.clear();
 
 upgradeButton.addEventListener("click", upgradeClickAmount);
