@@ -132,3 +132,23 @@ font-weight: bold;
     font-size: 18px;
     color: black;
   }
+  /* laat de click button bewegen */
+  .electricity-label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    animation: moveAcrossScreen 5s linear infinite;
+  }
+  
+  @keyframes moveAcrossScreen {
+    0% { left: 0; }
+    25% { top: 240px; left: calc(100% - 100px); } 
+    50% { top: 200px; left: calc(100% - 100px); } 
+    60% { top: 500px; left: calc(100% - 100px); } 
+    100% { left: 0;}
+  }
+
+  .freeze-animation {
+    animation-play-state: paused !important;
+  }
+  

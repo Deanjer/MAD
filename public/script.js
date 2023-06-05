@@ -137,3 +137,34 @@ upgradeButton.addEventListener("click", upgradeClickAmount);
 
 
 
+
+function handleDeviceOrientation() {
+  if (window.orientation !== undefined && window.DeviceOrientationEvent !== undefined) {
+    // Check for device orientation support and orientation change events
+
+    function toggleAnimation() {
+      const button = document.getElementById("button");
+      button.classList.toggle("freeze-animation");
+    }
+
+    window.addEventListener("orientationchange", toggleAnimation);
+
+    window.addEventListener("devicemotion", function(event) {
+      // Detect shake motion
+      const acceleration = event.accelerationIncludingGravity;
+      const shakeThreshold = 15; // Adjust the threshold value to your liking
+      
+      if (
+        Math.abs(acceleration.x) > shakeThreshold ||
+        Math.abs(acceleration.y) > shakeThreshold ||
+        Math.abs(acceleration.z) > shakeThreshold
+      ) {
+        toggleAnimation();
+      }
+    });
+  }
+}
+
+// Call the function when the page loads
+window.addEventListener("DOMContentLoaded", handleDeviceOrientation);
+
