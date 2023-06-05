@@ -134,3 +134,6 @@ if (isUpgraded) {
 localStorage.clear();
 
 upgradeButton.addEventListener("click", upgradeClickAmount);
+
+
+
