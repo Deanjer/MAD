@@ -1,4 +1,4 @@
-
+//modal 1
 var modal = document.getElementById("myModal");
 
 
@@ -48,6 +48,7 @@ if (event.target == modal2) {
 modal2.style.display = "none";
 }
 }
+//modal 3
 
 var modal3 = document.getElementById("myModal3");
 
@@ -73,8 +74,8 @@ if (event.target == modal3) {
 modal3.style.display = "none";
 }
 }
-//script.js
-//clicker
+
+//clicker functies
 let pointsElement = document.getElementById("points");
 let upgradeButton = document.getElementById("upgrade");
 let points = 0;
@@ -101,7 +102,7 @@ function addPoints() {
   localStorage.setItem("points", points);
   pointsElement.innerHTML = points;
 }
-
+// zorgt ervoor dat als de uprade gekocht is je de prijs niet meer ziet en niet nog een keer kan kopen
 function upgradeClickAmount() {
   if (!isUpgraded && points >= 100) {
     points -= 100;
@@ -115,7 +116,7 @@ function upgradeClickAmount() {
     localStorage.setItem("isUpgraded", isUpgraded);
 
     upgradeButton.textContent = "Upgraded";
-    document.getElementById("upgradeCost").textContent = ""; // Als de upgrade gekocht is zie je de prijs niet meer
+    document.getElementById("upgradeCost").textContent = ""; 
   }
 }
 
@@ -123,7 +124,7 @@ function upgradeClickAmount() {
 if (isUpgraded) {
   upgradeButton.disabled = true;
   upgradeButton.textContent = "Upgraded";
-  document.getElementById("upgradeCost").textContent = ""; // Als de upgrade gekocht is zie je de prijs niet meer
+  document.getElementById("upgradeCost").textContent = ""; 
 } else {
   upgradeButton.disabled = false;
   upgradeButton.textContent = "Upgrade";
@@ -135,36 +136,4 @@ localStorage.clear();
 
 upgradeButton.addEventListener("click", upgradeClickAmount);
 
-
-
-
-function handleDeviceOrientation() {
-  if (window.orientation !== undefined && window.DeviceOrientationEvent !== undefined) {
-    // Check for device orientation support and orientation change events
-
-    function toggleAnimation() {
-      const button = document.getElementById("button");
-      button.classList.toggle("freeze-animation");
-    }
-
-    window.addEventListener("orientationchange", toggleAnimation);
-
-    window.addEventListener("devicemotion", function(event) {
-      // Detect shake motion
-      const acceleration = event.accelerationIncludingGravity;
-      const shakeThreshold = 15; // Adjust the threshold value to your liking
-      
-      if (
-        Math.abs(acceleration.x) > shakeThreshold ||
-        Math.abs(acceleration.y) > shakeThreshold ||
-        Math.abs(acceleration.z) > shakeThreshold
-      ) {
-        toggleAnimation();
-      }
-    });
-  }
-}
-
-// Call the function when the page loads
-window.addEventListener("DOMContentLoaded", handleDeviceOrientation);
 

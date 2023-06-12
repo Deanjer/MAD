@@ -148,7 +148,5 @@ font-weight: bold;
     100% { left: 0;}
   }
 
-  .freeze-animation {
-    animation-play-state: paused !important;
-  }
+  
   
